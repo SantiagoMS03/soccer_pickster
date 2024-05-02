@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 # Read CSV
-premier_league_matches = pd.read_csv("./data/premier_league_matches.csv")
+premier_league_matches = pd.read_csv("../data/premier_league_matches.csv")
 
 # Perform one-hot encoding for 'Home' and 'Away'
 premier_league_matches = pd.get_dummies(premier_league_matches, columns=['Home', 'Away'])

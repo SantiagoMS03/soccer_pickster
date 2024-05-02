@@ -10,7 +10,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tools.eval_measures import rmse
 
 # Read CSV
-premier_league_matches = pd.read_csv("./data/premier_league_matches.csv")
+premier_league_matches = pd.read_csv("../data/premier_league_matches.csv")
 
 # Perform one-hot encoding for 'Home' and 'Away'
 premier_league_matches = pd.get_dummies(premier_league_matches, columns=['Home', 'Away'])

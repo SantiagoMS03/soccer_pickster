@@ -3,7 +3,7 @@ from sklearn.metrics import mean_squared_error
 import pandas as pd
 
 # Read CSV
-premier_league_matches = pd.read_csv("./data/premier_league_matches.csv")
+premier_league_matches = pd.read_csv("../data/premier_league_matches.csv")
 
 # Split data into training and validation sets
 train_size = int(len(premier_league_matches) * 0.8)
