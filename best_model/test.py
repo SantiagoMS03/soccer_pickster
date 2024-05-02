@@ -15,9 +15,14 @@ premier_league_matches = pd.get_dummies(premier_league_matches, columns=['Home',
 X = premier_league_matches.drop(columns=['HomeGoals', 'AwayGoals'])
 y = premier_league_matches[['HomeGoals', 'AwayGoals']]
 
-
 # Split the dataset into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train = X[X['Season_End_Year'] <= 2022]
+X_test = X[X['Season_End_Year'] == 2023]
+y_train = y[y.index.isin(X_train.index)]  # Matching indices with X_train to get corresponding y values
+y_test = y[y.index.isin(X_test.index)]  # Matching indices with X_test to get corresponding y values
+
+print(len(X_train))
+print(len(X_test))
 
 # Initialize a linear regression model
 regressor = LinearRegression()
